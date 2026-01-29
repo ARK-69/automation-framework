@@ -8,4 +8,3 @@ scripts/
 configs/
 package.json
 cucumber.js
-steps/world.ts
