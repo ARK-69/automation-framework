@@ -87,21 +87,11 @@ This ensures missing Playwright dependencies are installed as well.
 Create a `.env` file in the project root and set the following keys as needed:
 
 ```
-PWDEBUG=
-HEADLESS=
-SLOWMO=
-TEST_USER_EMAIL=
-TEST_USER_PASSWORD=
-FLEET_ADMIN_EMAIL=
-FLEET_ADMIN_PASSWORD=
-SECOND_USER_EMAIL=
-SECOND_USER_PASSWORD=
+PWDEBUG=0
+HEADLESS=0
+SLOWMO=0
 BASE_URL=
-EMPTY_STATE_EMAIL=
-EMPTY_STATE_PASSWORD=
-ADMIN_BASE_URL=
-ADMIN_TEST_USER_EMAIL=
-ADMIN_TEST_USER_PASSWORD=
+
 ```
 
 > Tip: You can copy the above block into your `.env` file and fill in the values as needed.
