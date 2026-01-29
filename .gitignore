@@ -1,0 +1,11 @@
+node_modules/
+dist/
+reports/
+.env
+*.log
+test-data/
+scripts/
+configs/
+package.json
+cucumber.js
+steps/world.ts
