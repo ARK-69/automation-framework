@@ -6,5 +6,4 @@ reports/
 test-data/
 scripts/
 configs/
-package.json
-cucumber.js
+
