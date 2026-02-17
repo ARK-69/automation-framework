@@ -1,0 +1,51 @@
+{
+  "name": "playwright-cucumber-pom-sample",
+  "version": "1.0.0",
+  "description": "Sample Playwright + TypeScript + Cucumber project using Page Object Model and Mocha reporting",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node -e \"const fs=require('fs'); if(!fs.existsSync('reports')) fs.mkdirSync('reports');\"",
+    "test": "npx cucumber-js --require-module ts-node/register --require ./steps/**/*.ts --format json:reports/cucumber-report.json --format progress",
+    "test:headed": "$env:PWDEBUG=1; npx cucumber-js --require-module ts-node/register --require ./steps/**/*.ts --format json:reports/cucumber-report.json --format progress",
+    "debug:navigate": "npx ts-node ./tests/debug-navigation.ts",
+    "posttest": "node ./configs/generate-report.js",
+    "playwright:install": "npx playwright install --with-deps",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run playwright:install",
+    "cucumber:run": "npx cucumber-js --format json:reports/cucumber-report.json",
+    "report:gen": "node ./configs/generate-report.js",
+    "test:ci": "run-s cucumber:run report:gen --continue-on-error"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "typescript",
+    "pom",
+    "mocha"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.57.0",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.19.30",
+    "@types/node-fetch": "^2.6.13",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "chai": "^4.3.7",
+    "cucumber-html-reporter": "^5.5.0",
+    "dotenv": "^16.6.1",
+    "eslint": "^8.0.0",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "playwright": "^1.40.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "dayjs": "^1.11.10"
+  }
+}
